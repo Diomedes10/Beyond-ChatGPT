@@ -78,3 +78,11 @@ async def main(message: cl.Message):
 
     # Send and close the message stream
     await msg.send()
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def greet_json():
+    return {"Hello": "World!"}
